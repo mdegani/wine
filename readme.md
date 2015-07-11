@@ -6,6 +6,6 @@ This is an early version.  Please see [this post](!http://mdegani.github.io/java
 
 I will work on a video demo and post it soon.
 
-Live demo available soon.
+Please see live demo here: http://winemaking.azurewebsites.net/www/#/home.
 
 This app uses an API, which has been built in asp.net Web API 2.  Code is not yet available, but it is running live at http://wineapi.azurewebsites.net/Help.  This API can work with multiple end-users and uses oauth2, but the login page of the app has not been implemented.  I've temporarily hard-coded a bearer token into the app (see [www/app/services/configInfo.js](!https://github.com/mdegani/wine/blob/master/www/app/services/configInfo.js)).
