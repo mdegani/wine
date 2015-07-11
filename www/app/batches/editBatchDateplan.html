@@ -1,0 +1,44 @@
+<ion-view title="Fermentation Plan" ng-controller="EditBatchCtrl as vm">
+
+    <ion-content class="has-header">
+
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="http://rk.wsimgs.com/wsimgs/rk/images/dp/wcm/201525/0151/img43c.jpg">
+                <h2>{{vm.batch.juiceType}}</h2>
+                <p>{{vm.batch.juiceBrand}} (from {{vm.batch.vendor}})</p>
+            </div>
+
+            <form ng-submit="vm.updateBatch('app.batches-detail')" name="form">
+
+                <div class="list">
+
+                    <label class="item item-input">
+                        <span class="input-label">Fermentation Start Date</span>
+                        <input type="date" ng-model="vm.batch.firstFermentationStartDate">
+                    </label>
+
+                    <label class="item item-input">
+                        <span class="input-label">First Racking Date</span>
+                        <input type="date" ng-model="vm.batch.firstRackingDate">
+                    </label>
+
+                    <label class="item item-input">
+                        <span class="input-label">Bottling Date</span>
+                        <input type="date" ng-model="vm.batch.bottlingDate">
+                    </label>
+
+                    <div class="item">
+                        <div>Fermenation time (days): {{vm.fermentationDays(vm.batch.bottlingDate, vm.batch.firstFermentationStartDate)}} </div>
+                    </div>
+
+                </div>
+
+                <button class="button button-full" ng-disabled="form.$invalid" class="button">Save</button>
+
+            </form>
+
+        </ion-content>
+        
+    </ion-view>

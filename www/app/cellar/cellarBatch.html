@@ -1,0 +1,23 @@
+
+<ion-view title="Cellar Batch Details" ng-controller="CellarBatchCtrl as vm">
+
+    <ion-content class="has-header">
+
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="http://rk.wsimgs.com/wsimgs/rk/images/dp/wcm/201525/0151/img43c.jpg">
+                <button class="button button-clear icon ion-edit"  ng-click="vm.edit2(vm.batch)"
+                style="float:right"></button>
+                <h2>{{vm.batch.juiceType}}</h2>
+                <p>{{vm.batch.juiceBrand}} (from {{vm.batch.vendor}})</p>
+                <p>Juice produced {{vm.batch.vuiceProductionDate  | date:'yyyy-MM-dd'}}</p>
+            </div>
+
+<div class="">
+    Not yet implemented.
+</div>
+
+        </ion-content>
+
+    </ion-view>

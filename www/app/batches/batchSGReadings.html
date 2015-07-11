@@ -1,0 +1,68 @@
+<ion-view title="Specific Gravity Readings" ng-controller="BatchSGReadingsCtrl as vm">
+
+  <ion-content class="has-header">
+
+    <button class="button button-block button-positive" ng-click="openModal()">New Reading</button>
+
+    <ion-list>
+
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="spGrReading in vm.batch.spGrReadings | filter: vm.notStarted | orderBy : '-readingDate'" type="item-text-wrap" ng-click="vm.selectBatch(batch.id)">
+        <!-- <img ng-src="{{chat.face}}"> -->
+        <h2>{{spGrReading.readingDate  | date:'MMM d, yyyy'}}</h2>
+        <p>{{spGrReading.readingValue}}</p>
+
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="vm.remove(spGrReading)">
+          Delete
+        </ion-option-button>
+
+        <ion-option-button class="button-positive" ng-click="vm.edit(spGrReading)">
+          Edit
+        </ion-option-button>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-view>
+
+
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Specific Gravity Reading</h1>
+    </ion-header-bar>
+    <ion-content>
+    <div>
+    <div>
+    <H3 style="text-align:center">
+    {{newReadingValue}}
+    </H3>
+</div>
+
+
+
+    Reading value:
+
+
+    <div class="range range-assertive" >
+                            <i class="icon ion-ios7-sunny-outline"></i>
+                            <input type="range" min="0" max="2" value="1" step=".01" ng-model="newReadingValue">
+
+
+                            <i class="icon ion-ios7-sunny"></i>
+
+
+                        </div>
+
+      </div>
+
+        <button class="button button-block button-positive" ng-click="closeModal(newReadingValue)">OK</button>
+
+    </ion-content>
+  </ion-modal-view>
+</script>

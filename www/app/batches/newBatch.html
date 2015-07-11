@@ -1,0 +1,56 @@
+<ion-view title="New Batch" ng-controller="NewBatchCtrl as vm">
+
+    <ion-content class="has-header">
+
+        <form ng-submit="vm.submitBatch()" name="form">
+
+            <div class="list">
+                <!-- to-do: validation -->
+                <label class="item item-input">
+                    <input type="text" placeholder="Juice Type" ng-model="vm.juiceType" required>
+                </label>
+
+                <label class="item item-input">
+                    <input type="text" placeholder="Juice Brand" ng-model="vm.juiceBrand">
+                </label>
+
+                <label class="item item-input">
+                    <input type="text" placeholder="Vendor" ng-model="vm.vendor">
+                </label>
+
+                <label class="item item-input">
+                    <textarea placeholder="General Notes" ng-model="vm.generalNotes"></textarea>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Fermentation Start Date</span>
+                    <input type="date" ng-model="vm.firstFermentationStartDate">
+                </label>
+
+
+                <label class="item item-input">
+                    <span class="input-label">First fermentation number of days:</span>
+                    <input type="number" ng-model="vm.firstFermentationDaysDefault">
+                </label>
+
+                <div class="item">
+                    First racking date: {{vm.firstRackingDate() |  date : 'fullDate'}}
+                </div>
+
+                <label class="item item-input">
+                    <span class="input-label">Second fermentation number of days:</span>
+                    <input type="number" ng-model="vm.secondFermentationDaysDefault">
+                </label>
+
+                <div class="item">
+                    Bottling date {{vm.bottlingDate() | date : 'fullDate'}}
+                </div>
+            </div>
+
+            <button ng-disabled="form.$invalid" class="button">Add Batch</button>
+
+        </form>
+
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,44 @@
+/* Empty. Add your own CSS if you like */
+.batchdate {
+  font-weight: bold;
+  color: white;
+    background-color: cornflowerblue;
+    border-left-width: thin;
+    border-left-color: white;
+    border-left-style: solid;
+
+}
+
+.batchaction {
+  font-weight: bold;
+  color: white;
+  background-color: cornflowerblue;
+
+
+
+}
+
+.batchperiod {
+
+}
+
+.batchtime {
+  font-weight: bold;
+
+}
+
+.sglabel {
+
+}
+
+.sgvalue {
+
+}
+
+
+
+.activephase {
+  border-left-width: thick;
+  border-left-color: yellow;
+  border-left-style: ridge;
+}

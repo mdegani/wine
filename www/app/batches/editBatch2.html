@@ -1,0 +1,34 @@
+<!-- "editBatch2" is just for editing the text (not dates). -->
+
+<ion-view title="New Batch" ng-controller="EditBatchCtrl as vm">
+
+    <ion-content class="has-header">
+
+        <form ng-submit="vm.updateBatch('app.batches-detail')" name="form">
+
+            <div class="list">
+                <!-- to-do: validation -->
+                <label class="item item-input">
+                    <input type="text" placeholder="Juice Type" ng-model="vm.batch.juiceType" required>
+                </label>
+
+                <label class="item item-input">
+                    <input type="text" placeholder="Juice Brand" ng-model="vm.batch.juiceBrand">
+                </label>
+
+                <label class="item item-input">
+                    <input type="text" placeholder="Vendor" ng-model="vm.batch.vendor">
+                </label>
+
+                <label class="item item-input">
+                    <textarea placeholder="General Notes" ng-model="vm.batch.generalNotes"></textarea>
+                </label>
+
+            </div>
+
+            <button ng-disabled="form.$invalid" class="button">Save</button>
+        </form>
+
+    </ion-content>
+
+</ion-view>

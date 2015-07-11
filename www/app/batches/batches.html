@@ -1,0 +1,75 @@
+<ion-view title="All Batches" ng-controller="BatchesCtrl as vm">
+
+    <ion-content class="has-header">
+
+        <button class="button button-full button-dark" ui-sref="app.batches-new">
+            Add new batch
+        </button>
+
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="vm.loadList(true)"></ion-refresher>
+
+        <div class="item item-divider item-dark">
+            Not Yet Started
+        </div>
+
+        <ion-list>
+
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="batch in vm.batches | filter: vm.notStarted" type="item-text-wrap" ng-click="vm.selectBatch(batch.id)">
+                <h2>{{batch.juiceType}}</h2>
+                <p>{{batch.juiceBrand}} (Id: {{batch.id}})</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive" ng-click="vm.remove(batch)">
+                    Delete
+                </ion-option-button>
+                <ion-option-button class="button-positive" ng-click="vm.edit(batch)">
+                    Edit
+                </ion-option-button>
+            </ion-item>
+
+        </ion-list>
+
+        <div class="item item-divider item-dark">
+            Fermenting
+        </div>
+
+        <ion-list>
+
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="batch in vm.batches | filter: vm.fermenting" type="item-text-wrap" ng-click="vm.selectBatch(batch.id)">
+                <!-- <img ng-src="{{chat.face}}"> -->
+                <h2>{{batch.juiceType}}</h2>
+                <p>{{batch.juiceBrand}} (Id: {{batch.id}})</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive" ng-click="vm.remove(batch)">
+                    Delete
+                </ion-option-button>
+                <ion-option-button class="button-positive" ng-click="vm.edit(batch)">
+                    Edit
+                </ion-option-button>
+            </ion-item>
+
+        </ion-list>
+
+        <div class="item item-divider item-dark">
+            Bottled
+        </div>
+
+        <ion-list>
+
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="batch in vm.batches | filter: vm.bottled" type="item-text-wrap" ng-click="vm.selectBatch(batch.id)">
+                <!-- <img ng-src="{{chat.face}}"> -->
+                <h2>{{batch.juiceType}}</h2>
+                <p>{{batch.JuiceBrand}} (Id: {{batch.id}})</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive" ng-click="vm.remove(batch)">
+                    Delete
+                </ion-option-button>
+                <ion-option-button class="button-positive" ng-click="vm.edit(batch)">
+                    Edit
+                </ion-option-button>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>

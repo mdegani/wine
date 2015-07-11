@@ -1,0 +1,150 @@
+
+<ion-view title="Batch Details" ng-controller="BatchCtrl as vm">
+
+    <ion-content class="has-header">
+
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="http://rk.wsimgs.com/wsimgs/rk/images/dp/wcm/201525/0151/img43c.jpg">
+                <button class="button button-clear icon ion-edit"  ng-click="vm.edit2(vm.batch)"
+                style="float:right"></button>
+                <h2>{{vm.batch.juiceType}}</h2>
+                <p>{{vm.batch.juiceBrand}} (from {{vm.batch.vendor}})</p>
+                <p>Juice produced {{vm.batch.vuiceProductionDate  | date:'yyyy-MM-dd'}}</p>
+            </div>
+
+            <div class="item item-body">
+                <p>{{vm.batch.generalNotes}}</p>
+
+                <p>First fermentation lasts {{vm.firstFermDays}} days.
+                    Second fermentation lasts {{vm.secondFermDays}} days.
+                    Total fermentation time: {{vm.totalDays}} days.
+                    Planning to bottle on Saturday {{vm.batch.bottlingDate | date : 'MMM d'}}. </p>
+            </div>
+
+            <!--
+            <div class="item item-body">
+            <ul class="list">
+            <li class="item">
+            Fermentation start date
+            <p>{{vm.batch.FirstFermentationStartDate  | date:'yyyy-MM-dd'}}</p>
+            </li>
+            <li class="item">
+            First racking date
+            <p>{{vm.batch.FirstRackingDate  | date:'yyyy-MM-dd'}}</p>
+            </li>
+            <li class="item">
+            Bottling date
+            <p>{{vm.batch.BottlingDate  | date:'yyyy-MM-dd'}}</p>
+            </li>
+            </ul>
+            </div>
+
+            -->
+            <div class="item-body">
+
+                <div class="row">
+                    <div class="col col-offset-66">
+                    </div>
+                    <div class="col col-33">
+                        <button class="button button-clear icon  ion-ios-calendar-outline"
+                        ng-click="vm.editDateplan(vm.batch)" style="float:right">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col batchaction">
+                        1 - Fermentation Start
+                    </div>
+                    <div class="col col-33 batchdate">
+                        {{vm.batch.firstFermentationStartDate  | date:'MMM d'}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-10 batchperiod" ng-class="{'activephase' : vm.fermentingPrimary}"></div>
+                    <div class="col sglabel">1st Sp gr ({{vm.firstReadingDate | date: 'MMM d'}})</div>
+                    <div class="col col-33 sgvalue">{{vm.firstReading}}</div>
+                </div>
+
+                <!-- TODO: show month and day mm-dd beside latest -->
+                <div class="row">
+                    <div class="col col-10 batchperiod" ng-class="{'activephase' : vm.fermentingPrimary}"></div>
+                    <div class="col sglabel">Last Sp gr ({{vm.latestPrimaryReadingDate | date : 'MMM d' }})</div>
+                    <!-- TODO: show "n/a" if there was no reading -->
+                    <div class="col col-33 sgvalue">{{vm.latestPrimaryReading}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-10 batchperiod"  ng-class="{'activephase' : vm.fermentingPrimary}"></div>
+                    <div class="col batchperiod">Primary Fermentation</div>
+                    <div class="col col-33 batchtime">{{vm.daysThruFirst}}/{{vm.firstFermDays}} days</div>
+                </div>
+
+                <div class="row" ng-show="vm.fermentingPrimary">
+                    <div class="col col-100 activephase">
+                        <button class="button button-energized button-full icon-right"
+                        ng-click="vm.sgreadings(vm.batch)" style="float:right">
+                            Specific Gravity
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col batchaction">
+                        2 - First Racking
+                    </div>
+                    <div class="col col-33 batchdate">
+                        {{vm.batch.firstRackingDate  | date:'MMM d'}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-10 batchperiod" ng-class="{'activephase' : vm.fermentingSecondary}"></div>
+                    <div class="col batchperiod">Secondary Fermentation</div>
+                    <div class="col col-33 batchtime ">{{vm.daysThruSecond}}/{{vm.secondFermDays}} days</div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-10 batchperiod" ng-class="{'activephase' : vm.fermentingSecondary}"></div>
+                    <div class="col sglabel">Last Sp gr ({{vm.latestSecondaryReadingDate | date: 'MMM d'}})</div>
+                    <div class="col col-33 sgvalue">{{vm.latestSecondaryReading}} (0.98)</div>
+                </div>
+
+                <div class="row" ng-show="vm.fermentingSecondary">
+                    <div class="col col-100 activephase">
+                        <button class="button button-energized button-full icon-right"   ng-click="vm.sgreadings(vm.batch)" style="float:right">
+                            Specific Gravity
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col batchaction">
+                        3 - Bottling
+                    </div>
+                    <div class="col col-33 batchdate">
+                        {{vm.batch.bottlingDate  | date:'MMM d'}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-10 batchperiod"></div>
+                    <div class="col batchperiod"> Total fermentation</div>
+                    <div class="col-33 batchtime">
+                        {{vm.daysThruTotal}}/{{vm.totalDays}} days
+                    </div>
+                </div>
+
+            </div>
+
+
+            <a class="button button-full icon-right ion-chevron-right" ng-click="vm.editBottleInventory(vm.batch)">Cellar this batch</a>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

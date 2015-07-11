@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-cache/dist/angular-cache.min.js"></script>
+    <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/moment/moment.js"></script>
+<!--
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/moment-timezone/moment-timezone.js"></script>
+-->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+    <script src="app/services/configInfo.js"></script>
+
+    <script src="app/home/HomeCtrl.js"></script>
+
+    <script src="app/batches/BatchesCtrl.js"></script>
+    <script src="app/batches/NewBatchCtrl.js"></script>
+    <script src="app/batches/EditBatchCtrl.js"></script>
+    <script src="app/batches/BatchSGReadingsCtrl.js"></script>
+
+    <script src="app/batches/BatchCtrl.js"></script>
+    <script src="app/cellar/CellarBatchCtrl.js"></script>
+
+    <script src="app/cellar/CellarCtrl.js"></script>
+    <script src="app/batches/EditInventoryCtrl.js"></script>
+
+
+    <script src="app/services/winemakingAPI.js"></script>
+    <script src="app/services/winestage.js"></script>
+    <script src="app/services/winedates.js"></script>
+    <script src="app/services/specificGravity.js"></script>
+    <script src="app/services/batchProgress.js"></script>
+
+
+    <!-- <script src="js/controllers.js"></script> -->
+
+  </head>
+
+  <body ng-app="winemakingApp">
+
+    <ion-nav-bar class="bar-stable bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

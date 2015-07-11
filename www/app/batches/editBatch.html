@@ -1,0 +1,31 @@
+<ion-view title="New Batch" ng-controller="EditBatchCtrl as vm">
+    <ion-content class="has-header">
+        <form ng-submit="vm.updateBatch()" name="form">
+            <div class="list">
+                <!-- to-do: validation -->
+                <label class="item item-input">
+                    <input type="text" placeholder="Juice Type" ng-model="vm.batch.juiceType" required>
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Juice Brand" ng-model="vm.batch.juiceBrand">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Vendor" ng-model="vm.batch.vendor">
+                </label>
+                <label class="item item-input">
+                    <textarea placeholder="General Notes" ng-model="vm.batch.generalNotes"></textarea>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Fermentation Start Date</span>
+                    <input type="date" ng-model="vm.batch.firstFermentationStartDate">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Bottling Date</span>
+                    <input type="date" ng-model="vm.batch.bottlingDate">
+                </label>
+            </div>
+            <button ng-disabled="form.$invalid" class="button">Save</button>
+        </form>
+        <div>Fermenation time (days): {{vm.fermentationDays(vm.batch.bottlingDate, vm.batch.firstFermentationStartDate)}} </div>
+    </ion-content>
+</ion-view>

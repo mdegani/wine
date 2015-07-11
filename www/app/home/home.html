@@ -1,0 +1,24 @@
+<ion-view view-title="Home"  ng-controller="HomeCtrl as vm">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">Cellar</div>
+            <div class="item item-body">
+                <div>
+                    Cellar not yet implemented.
+                </div>
+            </div>
+        </div>
+            <div class="item item-divider">Upcoming Dates</div>
+                    <ion-list>
+                        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="dates in vm.upcomingAll" type="item-text-wrap">
+                            <!-- <img ng-src="{{chat.face}}"> -->
+                            <h2>{{dates.dateType}}</h2>
+                            <h3>{{dates.batch.juiceType}}</h3>
+                            <p>{{dates.date | date : 'fullDate'}}</p>
+                            <ion-option-button class="button-assertive">
+                                Dismiss
+                            </ion-option-button>
+                        </ion-item>
+                    </ion-list>
+    </ion-content>
+</ion-view>
