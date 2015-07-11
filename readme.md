@@ -2,7 +2,7 @@
 
 This app tracks winemaking activities such as dates and inventory for the wine you make at home.
 
-This is an early version.  Please see [this post](!http://mdegani.github.io/javascript,/angularjs,/ionic,/jasmine,/oop,/2015/07/07/ionic-app-one.html) for a detailed description of the app.
+This is an early version.  Please see [this post](!http://mdegani.github.io/javascript,/angularjs,/ionic/2015/07/07/ionic-app-one.html) for a detailed description of the app.
 
 I will work on a video demo and post it soon.
 
