@@ -21,9 +21,7 @@ angular.module('winemakingApp', ['ionic', 'angular-cache'])
             }
         });
 
-    //prod maxAge: 1000 * 60 * 4    (4 hours)
-    CacheFactory("batchesCache", {storageMode: "localStorage", maxAge: 30000, deleteOnExpire: "aggressive"});
-    CacheFactory("batchCache", {storageMode: "localStorage", maxAge: 30000, deleteOnExpire: "aggressive"});
+
 
     })
 
