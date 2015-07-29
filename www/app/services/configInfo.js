@@ -6,7 +6,7 @@
 
     if (setUp === 'Azure') {
         angular.module('winemakingApp').constant("ApiUrl", "https://wineapi.azurewebsites.net/api/");
-        angular.module('winemakingApp').constant("UserToken", 'Bearer 1OlJY9YaLjHtr8Fze3-RQ_g32bx6tB0q53wo7Stj-yy9EGGyJXnz30DXPnyVa7pucDu4bNsuq7i4X1RNl7TPIELwpT3VXIsDO5lLXgSlinUWpNU600xskhUH543VX7wRWoHAVci0cpsdyLEJX0bRCtTOA3wxRzrXiszRfFEanpqk1O-PVK6NjpjrSBgbUaBF-5SJN1Dfds8U5Mo4OG7sDMAWE1TuewS2bam5N30LEioDc8tQ53adHk14A8e0OumXv_FiZQeIFl-C3db48zHU7kwyfi3FRK_asF60A8p8hp9VarFREmYAL7SK92UoARGKPnkCn3vUXJ1q3MG8CpZXJjh7Ezx2hoY6mG1K-DKFHTwYuuU0R35Gr6AQ4CC5B0nCvEOIbcEJPN2QtvMBO30DicMVIYT-Gk7FhIFyFlD7fzQbktLfv7bnUe4YSz_XHRIMCte2zIJFs9O-T2M-vuKYD6lDLihcfXdmdXLOeZi501k');
+        angular.module('winemakingApp').constant("UserToken", 'Bearer ogcXZFwYTN7sfsboIXWWemgCs_hvmLtUZ9DpY-cXTepQs8riUy3aQkKwKG5y-weWotLjAcvQSeiAoMVVwbU80CI5Lb3pc4poSZiNPlUvXvLtsgiJKsWQxhMbUinxcY7ec-9re-x1SM9L6LTCje7oG7yO9FtFhR2saYLHqPKZEf_WmIu6_J18KzkCTdYf2vIFPH88bR2sqQLR6n5kaB8LP0imf-bXpqolllfROyIKe2VZb3DfDB5Pn7B7HC7sc-J4yaqGw3qJPRNJ0-zyeWsfhO-O_DTOn4Zc_c67e1sZBF2-dDeD8L-ALJAQkmyr1wK2hEgGBqlXsrn0x_7k8w_ngogsdnlWjhB0Mo9F5FALQN9e_wT8DxRzb67DYVVQoCcDQ5MXfURfIRmKZ0kvRk8DF4ui8JUUjXDG3uRXITbkWJdmuXDWjp5W6iIQJ8_7z_DLnodaA4RFDrQZOyqHdsSnHNbp1KX-gfOeLgHe7wJs9tA');
     }
 
     if (setUp === 'local') {
