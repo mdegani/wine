@@ -87,7 +87,7 @@ angular.module('winemakingApp', ['ionic', 'angular-cache'])
                 url: '/batches/sgreadings/:id',
                 views: {
                     'tab-batches': {
-                        templateUrl: 'app/batches/batchSGreadings.html'
+                        templateUrl: 'app/batches/batchSG.html'
                     }
                 }
             })
