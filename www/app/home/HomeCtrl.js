@@ -13,5 +13,11 @@
             vm.upcomingAll = data;
         });
 
+        vm.filterFunction = function (prop) {
+            return function (item){
+                return new Date(item[prop]) > new Date();
+            };
+        };
+
     }
 }());
