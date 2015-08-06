@@ -30,16 +30,16 @@
                     return new Date(e.bottlingDate) < moment().add(weeksOut, 'weeks');
                 });
 
-                for (var i = 0; i < upcomingBottling.length; i++) {
-                    listUpcoming.push({dateType: 'Bottling', date: upcomingBottling[i].bottlingDate, batch: upcomingBottling[i]});
+                for (var j = 0; j < upcomingBottling.length; j++) {
+                    listUpcoming.push({dateType: 'Bottling', date: upcomingBottling[j].bottlingDate, batch: upcomingBottling[j]});
                 }
 
                 var upcomingFirstFerm = _.filter(data, function (e) {
                     return new Date(e.firstFermentationStartDate) < moment().add(weeksOut, 'weeks');
                 });
 
-                for (var i = 0; i < upcomingFirstFerm.length; i++) {
-                    listUpcoming.push({dateType: 'Fermentation Start', date: upcomingFirstFerm[i].firstFermentationStartDate, batch: upcomingFirstFerm[i]});
+                for (var k = 0; k < upcomingFirstFerm.length; k++) {
+                    listUpcoming.push({dateType: 'Fermentation Start', date: upcomingFirstFerm[k].firstFermentationStartDate, batch: upcomingFirstFerm[k]});
                 }
 
                 var listUpcomingSorted = _.sortBy(listUpcoming,function(e){
@@ -47,7 +47,7 @@
                 });
                 return listUpcomingSorted;
             });
-        }
+        };
 
         return {
             upcomingAll: upcomingAll

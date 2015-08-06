@@ -12,33 +12,33 @@
 
         //synchronous code:
         function notStarted(batch) {
-            return (new Date(batch.firstFermentationStartDate) > new Date() || !batch.firstFermentationStartDate)
-                &&  (new Date(batch.bottlingDate) > new Date() || !batch.bottlingDate)
-                && !batch.bottleInventory;
+            return (new Date(batch.firstFermentationStartDate) > new Date() || !batch.firstFermentationStartDate) &&
+            (new Date(batch.bottlingDate) > new Date() || !batch.bottlingDate) &&
+            !batch.bottleInventory;
         }
 
         function fermenting(batch) {
-            return (new Date(batch.firstFermentationStartDate) <= new Date() && batch.firstFermentationStartDate)
-                &&  (new Date(batch.bottlingDate) > new Date() || !batch.bottlingDate)
-                && !batch.bottleInventory;
+            return (new Date(batch.firstFermentationStartDate) <= new Date() && batch.firstFermentationStartDate) &&
+            (new Date(batch.bottlingDate) > new Date() || !batch.bottlingDate) &&
+            !batch.bottleInventory;
         }
 
         function fermentingPrimary(batch) {
-            return (new Date(batch.firstFermentationStartDate)
-                <= new Date() && batch.firstFermentationStartDate)
-                &&  (new Date(batch.firstRackingDate) > new Date())
-                && !batch.bottleInventory;
+            return (new Date(batch.firstFermentationStartDate) <=
+                new Date() && batch.firstFermentationStartDate) &&
+                (new Date(batch.firstRackingDate) > new Date()) &&
+                !batch.bottleInventory;
         }
 
         function fermentingSecondary(batch) {
-            return (new Date(batch.firstRackingDate) <= new Date() && batch.firstRackingDate)
-                &&  (new Date(batch.bottlingDate) > new Date() || !batch.bottlingDate)
-                && !batch.bottleInventory;
+            return (new Date(batch.firstRackingDate) <= new Date() && batch.firstRackingDate) &&
+            (new Date(batch.bottlingDate) > new Date() || !batch.bottlingDate) &&
+            !batch.bottleInventory;
         }
 
         function bottled(batch) {
-            return new Date(batch.bottlingDate) < new Date() && batch.bottlingDate
-                && !batch.bottleInventory;
+            return new Date(batch.bottlingDate) < new Date() && batch.bottlingDate &&
+            !batch.bottleInventory;
         }
 
         function cellaredAging(batch) {
