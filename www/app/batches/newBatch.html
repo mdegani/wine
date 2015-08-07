@@ -22,22 +22,23 @@
                     <textarea placeholder="General Notes" ng-model="vm.generalNotes"></textarea>
                 </label>
 
-                <label class="item item-input">
+                <label class="item item-input item-stacked-label">
                     <span class="input-label">Fermentation Start Date</span>
                     <input type="date" ng-model="vm.firstFermentationStartDate">
                 </label>
 
 
-                <label class="item item-input">
+                <label class="item item-input item-stacked-label">
                     <span class="input-label">First fermentation number of days:</span>
                     <input type="number" ng-model="vm.firstFermentationDaysDefault">
                 </label>
+
 
                 <div class="item">
                     First racking date: {{vm.firstRackingDate() |  date : 'fullDate'}}
                 </div>
 
-                <label class="item item-input">
+                <label class="item item-input item-stacked-label">
                     <span class="input-label">Second fermentation number of days:</span>
                     <input type="number" ng-model="vm.secondFermentationDaysDefault">
                 </label>

@@ -1,10 +1,11 @@
 <ion-view title="All Batches" ng-controller="BatchesCtrl as vm">
+    <ion-nav-buttons side="secondary">
+          <button class="button button-clear" ui-sref="app.batches-new">
+            New
+          </button>
+        </ion-nav-buttons>
 
     <ion-content class="has-header">
-
-        <button class="button button-full button-dark" ui-sref="app.batches-new">
-            Add new batch
-        </button>
 
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="vm.loadList(true)"></ion-refresher>
 
