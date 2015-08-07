@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('winemakingApp').controller('HomeCtrl', ['$scope', '$state', 'winedates', HomeCtrl]);
+    angular.module('winemakingApp').controller('HomeCtrl', ['$state', 'winedates', HomeCtrl]);
 
-    function HomeCtrl($scope, $state, winedates) {
+    function HomeCtrl($state, winedates) {
 
         var vm = this;
 

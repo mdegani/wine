@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('winemakingApp').controller('NewBatchCtrl', ['$scope', '$state', 'winemakingAPI', NewBatchCtrl]);
+    angular.module('winemakingApp').controller('NewBatchCtrl', ['$state', 'winemakingAPI', NewBatchCtrl]);
 
-    function NewBatchCtrl($scope, $state, winemakingAPI) {
+    function NewBatchCtrl($state, winemakingAPI) {
 
         var vm = this;
         var today = new Date();

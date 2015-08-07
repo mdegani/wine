@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('winemakingApp').controller('EditInventoryCtrl', ['$scope', '$state', '$stateParams', 'winemakingAPI', EditInventoryCtrl]);
+    angular.module('winemakingApp').controller('EditInventoryCtrl', ['$state', '$stateParams', 'winemakingAPI', EditInventoryCtrl]);
 
-    function EditInventoryCtrl($scope, $state, $stateParams, winemakingAPI) {
+    function EditInventoryCtrl($state, $stateParams, winemakingAPI) {
 
         var vm = this;
 

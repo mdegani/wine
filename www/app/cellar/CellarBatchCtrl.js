@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('winemakingApp').controller('CellarBatchCtrl', ['$scope', '$state', '$stateParams', 'winemakingAPI', 'batchProgress', 'specificGravity', 'winestage', CellarBatchCtrl]);
+    angular.module('winemakingApp').controller('CellarBatchCtrl', ['$state', '$stateParams', 'winemakingAPI', 'batchProgress', 'specificGravity', 'winestage', CellarBatchCtrl]);
 
-    function CellarBatchCtrl($scope, $state, $stateParams, winemakingAPI, batchProgress, specificGravity, winestage) {
+    function CellarBatchCtrl($state, $stateParams, winemakingAPI, batchProgress, specificGravity, winestage) {
         var vm = this;
 
         vm.editBottleInventory = function (batch) {

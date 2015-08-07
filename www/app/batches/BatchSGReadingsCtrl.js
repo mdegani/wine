@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('winemakingApp').controller('BatchSGReadingsCtrl', ['$scope', '$state', '$stateParams', '$ionicModal', 'winemakingAPI', 'specificGravity',  BatchSGReadingsCtrl]);
+    angular.module('winemakingApp').controller('BatchSGReadingsCtrl', ['$state', '$stateParams', '$ionicModal', 'winemakingAPI', 'specificGravity',  BatchSGReadingsCtrl]);
 
-    function BatchSGReadingsCtrl($scope, $state, $stateParams, $ionicModal, winemakingAPI, specificGravity) {
+    function BatchSGReadingsCtrl($state, $stateParams, $ionicModal, winemakingAPI, specificGravity) {
         var vm = this;
 
         vm.newReadingValue = 1;
@@ -40,7 +40,6 @@
                     vm.batch.spGrReadings.unshift(data);
                         winemakingAPI.getBatch(vm.batch.id, true)
                             .then(function (data) {
-                                //$scope.modal.hide();
                             });
                 });
         };
