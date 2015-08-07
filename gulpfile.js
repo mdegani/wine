@@ -59,5 +59,5 @@ gulp.task('test', function(done){
     //, singleRun: true
   }, function(){
     done();
-  })
+});
 });
