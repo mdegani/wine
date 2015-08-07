@@ -37,6 +37,6 @@
 
 .activephase {
   border-left-width: thick;
-  border-left-color: yellow;
+  border-left-color: lightgreen;
   border-left-style: ridge;
 }

@@ -6,6 +6,8 @@
     function BatchSGReadingsCtrl($scope, $state, $stateParams, $ionicModal, winemakingAPI, specificGravity) {
         var vm = this;
 
+        vm.newReadingValue = 1;
+
         winemakingAPI.getBatch($stateParams.id).then(function (data) {
             data.firstFermentationStartDate = new Date(data.firstFermentationStartDate);
             data.bottlingDate = new Date(data.bottlingDate);
@@ -26,22 +28,9 @@
             .then(function () {
                 vm.batch.spGrReadings.splice(vm.batch.spGrReadings.indexOf(spGrReading), 1);
             });
-        }
-
-        $ionicModal.fromTemplateUrl('my-modal.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function (modal) {
-            $scope.modal = modal;
-        });
-
-        $scope.newReadingValue = 1;
-
-        $scope.openModal = function () {
-
-            $scope.modal.show();
         };
-        $scope.closeModal = function (newSG) {
+
+        vm.saveNewReading = function (newSG) {
             var today = new Date();
             var newSGObject = {batchId: vm.batch.id, readingValue: newSG, readingDate: new Date(today.getFullYear(), today.getMonth(), today.getDate(),0,0,0,0)};
 
@@ -51,21 +40,9 @@
                     vm.batch.spGrReadings.unshift(data);
                         winemakingAPI.getBatch(vm.batch.id, true)
                             .then(function (data) {
-                                $scope.modal.hide();
+                                //$scope.modal.hide();
                             });
                 });
         };
-        //Cleanup the modal when we're done with it!
-        $scope.$on('$destroy', function () {
-            $scope.modal.remove();
-        });
-        // Execute action on hide modal
-        $scope.$on('modal.hidden', function () {
-            // Execute action
-        });
-        // Execute action on remove modal
-        $scope.$on('modal.removed', function () {
-            // Execute action
-        });
     }
 }());

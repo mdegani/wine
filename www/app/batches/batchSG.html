@@ -1,8 +1,25 @@
-<ion-view title="Specific Gravity Readings" ng-controller="BatchSGReadingsCtrl as vm">
-
+<ion-view title="Sp Gr Readings" ng-controller="BatchSGReadingsCtrl as vm">
   <ion-content class="has-header">
 
-    <button class="button button-block button-positive" ng-click="openModal()">New Reading</button>
+
+<H3 style="text-align:center">
+New value: {{vm.newReadingValue}}
+</H3>
+<div class="range range-assertive" >
+    <i class="icon ion-ios7-sunny-outline"></i>
+    <input type="range" min="0.99" max="1.15" step="0.001" ng-model="vm.newReadingValue">
+    <i class="icon ion-ios7-sunny"></i>
+</div>
+
+<div class="row">
+  <div class="col col-33"></div>
+  <div class="col col-33">
+      <button class="button button-clear button-positive button-full" ng-click="vm.saveNewReading(vm.newReadingValue)">Save</button>
+
+  </div>
+  <div class="col col-33"></div>
+</div>
+
 
     <ion-list>
 
@@ -28,41 +45,3 @@
   </ion-content>
 
 </ion-view>
-
-
-
-<script id="my-modal.html" type="text/ng-template">
-  <ion-modal-view>
-    <ion-header-bar>
-      <h1 class="title">Specific Gravity Reading</h1>
-    </ion-header-bar>
-    <ion-content>
-    <div>
-    <div>
-    <H3 style="text-align:center">
-    {{newReadingValue}}
-    </H3>
-</div>
-
-
-
-    Reading value:
-
-
-    <div class="range range-assertive" >
-                            <i class="icon ion-ios7-sunny-outline"></i>
-                            <input type="range" min="0" max="2" value="1" step=".01" ng-model="newReadingValue">
-
-
-                            <i class="icon ion-ios7-sunny"></i>
-
-
-                        </div>
-
-      </div>
-
-        <button class="button button-block button-positive" ng-click="closeModal(newReadingValue)">OK</button>
-
-    </ion-content>
-  </ion-modal-view>
-</script>
