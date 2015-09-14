@@ -5,6 +5,7 @@
     "ionic": "driftyco/ionic-bower#1.0.0"
   },
   "dependencies": {
+    "HackStack": "angular-hackstack#~0.1.0",
     "angular-cache": "~4.2.0",
     "moment-timezone": "~0.4.0",
     "underscore": "~1.8.3"

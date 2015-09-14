@@ -4,7 +4,7 @@
 
 
 
-angular.module('winemakingApp', ['ionic', 'angular-cache'])
+angular.module('winemakingApp', ['ionic', 'angular-cache', 'hackstack'])
     .run(function ($ionicPlatform, CacheFactory) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

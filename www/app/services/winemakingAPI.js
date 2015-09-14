@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('winemakingApp').factory('winemakingAPI', ['$http', '$q', '$ionicLoading', 'CacheFactory',
-    'ApiUrl', 'UserToken', winemakingAPI]);
+    'ApiUrl', 'UserToken', 'api', winemakingAPI]);
     //bower install angular-cache
-    function winemakingAPI($http, $q, $ionicLoading, CacheFactory, ApiUrl, UserToken) {
+    function winemakingAPI($http, $q, $ionicLoading, CacheFactory, ApiUrl, UserToken, api) {
 
         //prod maxAge: 1000 * 60 * 4    (4 hours)
         CacheFactory('batchesCache', {storageMode: 'localStorage', maxAge: 30000, deleteOnExpire: 'aggressive'});
@@ -36,21 +36,22 @@
                 deferred.resolve(batchesData);
             } else {
                 $ionicLoading.show({template: 'Loading...'});
-                $http.get(ApiUrl + 'Batches/')
-                    .success(
-                        function (data) {
-                            batchesCache.put(cacheKey, data);
+                api.getAll('batches')
+                    .then(
+                        function handelSuccess(result) {
+                            batchesCache.put(cacheKey, result.data);
                             $ionicLoading.hide();
-                            deferred.resolve(data);
+                            deferred.resolve(result.data);
                         }
                     )
-                    .error(
-                        function () {
-                            //ui logic in service
-                            $ionicLoading.hide();
-                            deferred.reject();
-                        }
-                    );
+                    // .error(
+                    //     function () {
+                    //         //ui logic in service
+                    //         $ionicLoading.hide();
+                    //         deferred.reject();
+                    //     }
+                    // )
+                    ;
             }
             return deferred.promise;
         }
@@ -59,6 +60,10 @@
 
             if (typeof forceRefresh === 'undefined') {
                 forceRefresh = false;
+            }
+
+            if (typeof currentBatchId === 'string'){
+              currentBatchId = parseInt(currentBatchId);
             }
 
             var deferred = $q.defer(),
@@ -74,21 +79,22 @@
                 deferred.resolve(batchData);
             } else {
                 $ionicLoading.show({template: 'Loading...'});
-                $http.get(ApiUrl + 'Batches/' + currentBatchId)
-                    .success(
-                        function (data) {
-                            batchCache.put(cacheKey, data);
+                api.get('batches', currentBatchId)
+                    .then(
+                        function handelSuccess(result) {
+                            batchCache.put(cacheKey, result.data);
                             $ionicLoading.hide();
-                            deferred.resolve(data);
+                            deferred.resolve(result.data);
                         }
                     )
-                    .error(
-                        function () {
-                            //couple service to UI
-                            $ionicLoading.hide();
-                            deferred.reject();
-                        }
-                    );
+                    // .error(
+                    //     function () {
+                    //         //couple service to UI
+                    //         $ionicLoading.hide();
+                    //         deferred.reject();
+                    //     }
+                    // )
+                    ;
             }
             return deferred.promise;
         }
